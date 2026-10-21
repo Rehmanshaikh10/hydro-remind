@@ -1,13 +1,16 @@
-
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineConfig({
+  base: '/hydro-remind/',
+
   plugins: [
     react(),
+
     VitePWA({
       registerType: 'autoUpdate',
+
       manifest: {
         name: 'HydroRemind',
         short_name: 'HydroRemind',
@@ -15,15 +18,17 @@ export default defineConfig({
         theme_color: '#0ea5e9',
         background_color: '#071a2b',
         display: 'standalone',
-        start_url: '/',
+        start_url: '/hydro-remind/',
+        scope: '/hydro-remind/',
+
         icons: [
           {
-            src: '/pwa-192x192.png',
+            src: '/hydro-remind/pwa-192x192.png',
             sizes: '192x192',
             type: 'image/png'
           },
           {
-            src: '/pwa-512x512.png',
+            src: '/hydro-remind/pwa-512x512.png',
             sizes: '512x512',
             type: 'image/png'
           }
